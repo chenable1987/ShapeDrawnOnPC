@@ -15,12 +15,10 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     scribblearea.cpp \
-    customdialog.cpp \
-    shape.cpp
+    customdialog.cpp
 
 HEADERS  += mainwindow.h \
     scribblearea.h \
-    customdialog.h \
-    shape.h
+    customdialog.h
 
 FORMS    += mainwindow.ui
