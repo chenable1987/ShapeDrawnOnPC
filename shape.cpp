@@ -1,4 +1,6 @@
 #include "shape.h"
+//#include <iostream>
+//using namespace std;
 
 Shape::Shape(float pw, float sx, float sy)
 {

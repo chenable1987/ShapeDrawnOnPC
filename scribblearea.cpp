@@ -55,7 +55,7 @@ void ScribbleArea::clearImage()
     update();
 }
 
-void ScribbleArea::drawLine(int x1,int y1, int x2,int y2)
+void ScribbleArea::drawLine(float x1, float y1, float x2, float y2)
 {
     QPainter painter(&image);
     painter.setPen(QPen(myPenColor, myPenWidth, Qt::SolidLine, Qt::RoundCap,
@@ -66,15 +66,26 @@ void ScribbleArea::drawLine(int x1,int y1, int x2,int y2)
     update(QRect(QPoint(x1,y1), QPoint(x2,y2)).normalized().adjusted(-rad, -rad, +rad, +rad));
 }
 
-void ScribbleArea::drawRectangle(int top,int left, int bottom,int right )
+void ScribbleArea::drawRectangle(int x,int y, int width,int height )
 {
     QPainter painter(&image);
     painter.setPen(QPen(myPenColor, myPenWidth, Qt::SolidLine, Qt::RoundCap,
                         Qt::RoundJoin));
-    painter.drawRect(top,left,bottom,right);
+    painter.drawRect(x,y,width,height);
     modified = true;
     int rad = (myPenWidth / 2) + 2;
-    update(QRect(QPoint(top,left), QPoint(bottom,right)).normalized().adjusted(-rad, -rad, +rad, +rad));
+    update(QRect(QPoint(x,y), QPoint(x+width,y+height)).normalized().adjusted(-rad, -rad, +rad, +rad));
+}
+
+void ScribbleArea::drawEllipse(int centerX, int centerY, int radiusX,int radiusY)
+{
+    QPainter painter(&image);
+    painter.setPen(QPen(myPenColor, myPenWidth, Qt::SolidLine, Qt::RoundCap,
+                        Qt::RoundJoin));
+    painter.drawEllipse(centerX,centerY,centerX+2*radiusX,centerY+2*radiusY);
+    modified = true;
+    int rad = (myPenWidth / 2) + 2;
+    update(QRect(QPoint(centerX,centerY), QPoint(centerX+2*radiusX,centerY+2*radiusY)).normalized().adjusted(-rad, -rad, +rad, +rad));
 }
 
 void ScribbleArea::mousePressEvent(QMouseEvent *event)

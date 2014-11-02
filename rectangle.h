@@ -5,8 +5,12 @@
 class Rectangle : public Shape
 {
 public:
-    Rectangle(float pw, float sx, float sy, float w,float h):Shape(pw,sx,sy),width(w),height(h){};
+    Rectangle(float pw, float sx, float sy, float w, float h):Shape(pw,sx,sy),width(w),height(h){};
     ~Rectangle();
+    float getStartX();
+    float getStartY();
+    float getWidth();
+    float getHeight();
     void scale(float scalar);
     void offset(float a, float b);
     void draw();

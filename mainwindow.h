@@ -3,6 +3,10 @@
 
 #include <QList>
 #include <QMainWindow>
+#include "shape.h"
+#include "line.h"
+#include "rectangle.h"
+#include "oval.h"
 
 class ScribbleArea;
 
@@ -54,6 +58,9 @@ private:
     QAction *drawOvalAct;
     QAction *aboutAct;
     QAction *aboutQtAct;
+
+    QList<Shape*> shapesCollection;
+
 };
 
 #endif

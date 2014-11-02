@@ -70,13 +70,16 @@ void MainWindow::drawLine()
    d.addSpinBox("Start y: ", 0, 500,&y1,1);
    d.addSpinBox("End x: ", 0, 500,&x2,1);
    d.addSpinBox("End y: ", 0, 500,&y2,1);
+   //d.addCustomButton("Create");
 
    d.exec();
 
    if(d.wasCancelled())
        return;
 
-   scribbleArea->drawLine(x1,y1,x2,y2);
+   Line* line=new Line(1,x1,y1,x2,y2);
+   shapesCollection.append(line);
+   scribbleArea->drawLine(line->getStartX(),line->getStartY(),line->getEndX(),line->getEndY());
 }
 void MainWindow::drawRectangle()
 {
@@ -92,16 +95,29 @@ void MainWindow::drawRectangle()
     if(d.wasCancelled())
         return;
 
-    scribbleArea->drawRectangle(top,left,bottom,right);
-
+    //Rectangle* rectangle=new Rectangle(1,top,left,right-left,top-bottom);
+    //shapesCollection.append(rectangle);
+    //ScribbleArea->drawRectangle(rectangle->getStartX(),rectangle->getStartY(),rectangle->getWidth(),rectangle->getHeight());
+    scribbleArea->drawRectangle(top,left, bottom, right);
 }
 void MainWindow::drawOval()
 {
+    int centerX=100, centerY=100,radiusX=40,radiusY=30;
+    CustomDialog d("Properties",this);
+    d.addSpinBox("centerX: ", 0, 500,&centerX,1);
+    d.addSpinBox("centerY: ", 0, 500,&centerY,1);
+    d.addSpinBox("radiusX: ", 0, 500,&radiusX,1);
+    d.addSpinBox("radiusY: ", 0, 500,&radiusY,1);
 
+    d.exec();
+
+    if(d.wasCancelled())
+        return;
+
+    Oval* oval=new Oval(1,centerX,centerY,radiusX,radiusY);
+    shapesCollection.append(oval);
+    scribbleArea->drawEllipse(oval->getStartX(),oval->getStartY(),oval->getRadiusX(),oval->getRadiusY());
 }
-
-
-
 
 void MainWindow::about()
 {

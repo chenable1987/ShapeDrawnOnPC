@@ -5,6 +5,10 @@
 #include <QImage>
 #include <QPoint>
 #include <QWidget>
+#include "shape.h"
+#include "line.h"
+#include "rectangle.h"
+#include "oval.h"
 
 class ScribbleArea : public QWidget
 {
@@ -25,8 +29,9 @@ public:
 public slots:
     void clearImage();
     //shape slots
-    void drawLine(int x1,int y1, int x2,int y2);
-    void drawRectangle(int top,int left, int bottom,int right );
+    void drawLine(float x1, float y1, float x2, float y2);
+    void drawRectangle(int x,int y, int width,int height );
+    void drawEllipse(int centerX, int centerY, int radiusX,int radiusY);
 
 protected:
     void mousePressEvent(QMouseEvent *event);

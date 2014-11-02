@@ -3,6 +3,25 @@
 Oval::~Oval()
 {
 }
+float Oval::getStartX()
+{
+    return startX;
+}
+
+float Oval::getStartY()
+{
+    return startY;
+}
+
+float Oval::getRadiusX()
+{
+    return radiusX;
+}
+
+float Oval::getRadiusY()
+{
+    return radiusY;
+}
 
 void Oval::scale(float scalar)
 {
@@ -12,8 +31,8 @@ void Oval::scale(float scalar)
 
 void Oval::offset(float a, float b)
 {
-    Shape::startX=startX+a;
-    Shape::startY=startY+b;
+    startX=startX+a;
+    startY=startY+b;
 }
 
 void Oval::draw()

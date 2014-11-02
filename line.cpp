@@ -5,6 +5,25 @@
 
 Line::~Line()
 {}
+float Line::getStartX()
+{
+    return startX;
+}
+
+float Line::getStartY()
+{
+    return startY;
+}
+
+float Line::getEndX()
+{
+    return endX;
+}
+
+float Line::getEndY()
+{
+    return endY;
+}
 
 void Line::scale(float scalar)
 {
@@ -14,8 +33,8 @@ void Line::scale(float scalar)
 
 void Line::offset(float a, float b)
 {
-    Shape::startX=startX+a;
-    Shape::startY=startY+b;
+    startX=startX+a;
+    startY=startY+b;
     endX=endX+a;
     endY=endY+b;
 }
