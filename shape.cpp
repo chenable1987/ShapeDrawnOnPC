@@ -14,6 +14,31 @@ Shape::Shape(QColor fillColor, QColor penColor, float penWidth, float startX, fl
 Shape::~Shape()
 {}
 
+QColor Shape::getFillColor()
+{
+    return fillColor;
+}
+
+QColor Shape::getPenColor()
+{
+    return penColor;
+}
+
+float Shape::getPenWidth()
+{
+    return penWidth;
+}
+
+float Shape::getStartX()
+{
+    return startX;
+}
+
+float Shape::getStartY()
+{
+    return startY;
+}
+
 void Shape::scale(float scalar)
 {}
 

@@ -5,10 +5,8 @@
 class Rectangle : public Shape
 {
 public:
-    Rectangle(QColor fillColor=Qt::red, QColor penColor=Qt::blue, float penWidth=1.0f, float startX=0 , float startY=0 , float width=200, float height=200);
+    Rectangle(QColor fillColor, QColor penColor, float penWidth, float startX, float startY, float width,float height);
     ~Rectangle();
-    float getStartX();
-    float getStartY();
     float getWidth();
     float getHeight();
     void scale(float scalar);

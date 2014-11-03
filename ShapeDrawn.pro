@@ -18,15 +18,15 @@ SOURCES += main.cpp\
     customdialog.cpp \
     shape.cpp \
     line.cpp \
-    rectangle.cpp \
-    oval.cpp
+    oval.cpp \
+    rectangle.cpp
 
 HEADERS  += mainwindow.h \
     scribblearea.h \
     customdialog.h \
     shape.h \
     line.h \
-    rectangle.h \
-    oval.h
+    oval.h \
+    rectangle.h
 
 FORMS    += mainwindow.ui

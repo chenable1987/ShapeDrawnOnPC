@@ -9,15 +9,6 @@ Line::Line(QColor fillColor, QColor penColor, float penWidth, float startX , flo
 
 Line::~Line()
 {}
-float Line::getStartX()
-{
-    return startX;
-}
-
-float Line::getStartY()
-{
-    return startY;
-}
 
 float Line::getEndX()
 {

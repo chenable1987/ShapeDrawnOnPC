@@ -5,10 +5,8 @@
 class Oval : public Shape
 {
 public:
-    Oval(QColor fillColor=Qt::red, QColor penColor=Qt::blue, float penWidth=1.0f, float startX=0 , float startY=0 , float radiusX=80, float radiusY=40);
+    Oval(QColor fillColor=Qt::white, QColor penColor=Qt::blue, float penWidth=1.0f, float startX=0 , float startY=0 , float radiusX=80, float radiusY=40);
     ~Oval();
-    float getStartX();
-    float getStartY();
     float getRadiusX();
     float getRadiusY();
     void scale(float scalar);

@@ -30,8 +30,8 @@ public slots:
     void clearImage();
     //shape slots
     void drawLine(float x1, float y1, float x2, float y2);
-    void drawRectangle(int x,int y, int width,int height );
-    void drawEllipse(int centerX, int centerY, int radiusX,int radiusY);
+    void drawRectangle(float x,float y, float width,float height );
+    void drawEllipse(float centerX, float centerY, float radiusX,float radiusY);
 
 protected:
     void mousePressEvent(QMouseEvent *event);

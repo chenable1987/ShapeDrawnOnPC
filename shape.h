@@ -5,8 +5,13 @@
 class Shape
 {
 public:
-    Shape(QColor fillColor=Qt::red, QColor penColor=Qt::blue, float penWidth=1.0f, float startX=0, float startY=0);
+    Shape(QColor fillColor=Qt::white, QColor penColor=Qt::blue, float penWidth=1.0f, float startX=0, float startY=0);
     virtual ~Shape();
+    QColor getFillColor();
+    QColor getPenColor();
+    float getPenWidth();
+    float getStartX();
+    float getStartY();
     virtual void scale(float scalar);
     virtual void offset(float a, float b);
     virtual void draw();

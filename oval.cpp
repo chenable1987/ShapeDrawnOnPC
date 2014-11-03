@@ -8,15 +8,6 @@ Oval::Oval(QColor fillColor, QColor penColor, float penWidth, float startX , flo
 Oval::~Oval()
 {
 }
-float Oval::getStartX()
-{
-    return startX;
-}
-
-float Oval::getStartY()
-{
-    return startY;
-}
 
 float Oval::getRadiusX()
 {
