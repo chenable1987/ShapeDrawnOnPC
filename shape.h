@@ -1,17 +1,21 @@
 #ifndef SHAPE_H
 #define SHAPE_H
+#include <qcolor.h>
 
 class Shape
 {
 public:
-    Shape(float pw=1,float sx=0, float sy=0);
+    Shape(QColor fillColor=Qt::red, QColor penColor=Qt::blue, float penWidth=1.0f, float startX=0, float startY=0);
     virtual ~Shape();
     virtual void scale(float scalar);
     virtual void offset(float a, float b);
     virtual void draw();
 
 protected:
+    QColor fillColor;
+    QColor penColor;
     float penWidth;
+
     float startX;
     float startY;
 };

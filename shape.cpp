@@ -2,12 +2,15 @@
 //#include <iostream>
 //using namespace std;
 
-Shape::Shape(float pw, float sx, float sy)
+Shape::Shape(QColor fillColor, QColor penColor, float penWidth, float startX, float startY)
 {
-    penWidth=pw;
-    startX=sx;
-    startY=sy;
+    this->fillColor=fillColor;
+    this->penColor=penColor;
+    this->penWidth=penWidth;
+    this->startX=startX;
+    this->startY=startY;
 }
+
 Shape::~Shape()
 {}
 

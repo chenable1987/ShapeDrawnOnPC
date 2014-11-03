@@ -1,5 +1,10 @@
 #include "rectangle.h"
+Rectangle::Rectangle(QColor fillColor, QColor penColor, float penWidth, float startX , float startY , float width, float height):Shape(fillColor,penColor,penWidth,startX,startY)
+{
+    this->width=width;
+    this->height=height;
 
+};
 Rectangle::~Rectangle()
 {
 
@@ -32,8 +37,8 @@ void Rectangle::scale(float scalar)
 
 void Rectangle::offset(float a, float b)
 {
-    Shape::startX=startX+a;
-    Shape::startY=startY+b;
+    startX=startX+a;
+    startY=startY+b;
 }
 
 void Rectangle::draw()

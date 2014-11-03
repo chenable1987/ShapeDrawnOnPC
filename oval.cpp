@@ -1,4 +1,9 @@
 #include "oval.h"
+Oval::Oval(QColor fillColor, QColor penColor, float penWidth, float startX , float startY , float radiusX, float radiusY):Shape(fillColor,penColor,penWidth,startX,startY)
+{
+    this->radiusX=radiusX;
+    this->radiusY=radiusY;
+};
 
 Oval::~Oval()
 {

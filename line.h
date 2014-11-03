@@ -5,7 +5,7 @@
 class Line : public Shape
 {
 public:
-    Line(float pw, float sx, float sy, float ex, float ey):Shape(pw,sx,sy),endX(ex),endY(ey){};
+    Line(QColor fillColor=Qt::red, QColor penColor=Qt::blue, float penWidth=1.0f, float startX=0 , float startY=0 , float endX=100, float endY=100);
     ~Line();
     float getStartX();
     float getStartY();

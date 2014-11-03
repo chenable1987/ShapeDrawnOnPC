@@ -1,7 +1,11 @@
 #include "line.h"
 
-//void Line::Line(float pw, float sx, float sy, float ex, float ey):Shape(pw,sx,sy),endX(ex),endY(ey)
-//{}
+
+Line::Line(QColor fillColor, QColor penColor, float penWidth, float startX , float startY , float endX, float endY):Shape(fillColor,penColor,penWidth,startX,startY)
+{
+    this->endX=endX;
+    this->endY=endY;
+};
 
 Line::~Line()
 {}

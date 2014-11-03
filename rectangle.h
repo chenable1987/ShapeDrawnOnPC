@@ -5,7 +5,7 @@
 class Rectangle : public Shape
 {
 public:
-    Rectangle(float pw, float sx, float sy, float w, float h):Shape(pw,sx,sy),width(w),height(h){};
+    Rectangle(QColor fillColor=Qt::red, QColor penColor=Qt::blue, float penWidth=1.0f, float startX=0 , float startY=0 , float width=200, float height=200);
     ~Rectangle();
     float getStartX();
     float getStartY();

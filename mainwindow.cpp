@@ -77,29 +77,11 @@ void MainWindow::drawLine()
    if(d.wasCancelled())
        return;
 
-   Line* line=new Line(1,x1,y1,x2,y2);
+   Line* line=new Line(Qt::red,Qt::blue,1,x1,y1,x2,y2);
    shapesCollection.append(line);
    scribbleArea->drawLine(line->getStartX(),line->getStartY(),line->getEndX(),line->getEndY());
 }
-void MainWindow::drawRectangle()
-{
-    int top=0, left=0,bottom=100,right=100;
-    CustomDialog d("Properties",this);
-    d.addSpinBox("Top: ", 0, 500,&top,1);
-    d.addSpinBox("Left: ", 0, 500,&left,1);
-    d.addSpinBox("Bottom: ", 0, 500,&bottom,1);
-    d.addSpinBox("Right: ", 0, 500,&right,1);
 
-    d.exec();
-
-    if(d.wasCancelled())
-        return;
-
-    //Rectangle* rectangle=new Rectangle(1,top,left,right-left,top-bottom);
-    //shapesCollection.append(rectangle);
-    //ScribbleArea->drawRectangle(rectangle->getStartX(),rectangle->getStartY(),rectangle->getWidth(),rectangle->getHeight());
-    scribbleArea->drawRectangle(top,left, bottom, right);
-}
 void MainWindow::drawOval()
 {
     int centerX=100, centerY=100,radiusX=40,radiusY=30;
@@ -114,10 +96,31 @@ void MainWindow::drawOval()
     if(d.wasCancelled())
         return;
 
-    Oval* oval=new Oval(1,centerX,centerY,radiusX,radiusY);
+    Oval* oval=new Oval(Qt::red, Qt::blue, 1,centerX,centerY,radiusX,radiusY);
     shapesCollection.append(oval);
     scribbleArea->drawEllipse(oval->getStartX(),oval->getStartY(),oval->getRadiusX(),oval->getRadiusY());
 }
+
+void MainWindow::drawRectangle()
+{
+    int top=0, left=0,bottom=100,right=100;
+    CustomDialog d("Properties",this);
+    d.addSpinBox("Top: ", 0, 500,&top,1);
+    d.addSpinBox("Left: ", 0, 500,&left,1);
+    d.addSpinBox("Bottom: ", 0, 500,&bottom,1);
+    d.addSpinBox("Right: ", 0, 500,&right,1);
+
+    d.exec();
+
+    if(d.wasCancelled())
+        return;
+
+    //Rectangle* rectangle=new Rectangle(Qt::red, Qt::blue, 1,top,left,right-left,top-bottom);
+    //shapesCollection.append(rectangle);
+    //ScribbleArea->drawRectangle(rectangle->getStartX(),rectangle->getStartY(),rectangle->getWidth(),rectangle->getHeight());
+    scribbleArea->drawRectangle(top,left, bottom, right);
+}
+
 
 void MainWindow::about()
 {

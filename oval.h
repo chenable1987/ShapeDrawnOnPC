@@ -5,7 +5,7 @@
 class Oval : public Shape
 {
 public:
-    Oval(float pw, float sx, float sy, float rx, float ry):Shape(pw,sx,sy),radiusX(rx),radiusY(ry){};
+    Oval(QColor fillColor=Qt::red, QColor penColor=Qt::blue, float penWidth=1.0f, float startX=0 , float startY=0 , float radiusX=80, float radiusY=40);
     ~Oval();
     float getStartX();
     float getStartY();
